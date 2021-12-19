@@ -2,7 +2,7 @@ import Networks.FetchUrlsData
 
 
 fun main() {
-    val array = arrayOf("https://www.jiscollege.ac.in/")
+    val array = arrayOf("https://google.com","https://fb.com")
     getData(array)
 
 }

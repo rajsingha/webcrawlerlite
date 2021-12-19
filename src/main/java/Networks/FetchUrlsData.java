@@ -24,7 +24,7 @@ public class FetchUrlsData {
         Validate.isTrue(true, "usage: supply url to fetch");
         this.url = url;
         doc = Jsoup.connect(this.url).get();
-        uid = Tools.INSTANCE.getRandomNumber(10000, 500000);
+        uid = Tools.INSTANCE.getRandomNumber(100000, 900000);
         setupDatabase();
     }
 
@@ -65,8 +65,8 @@ public class FetchUrlsData {
     public void getLinks() {
         String web_link;
         String web_name;
-        String siteSize = null;
-        String responseTime = null;
+        String siteSize;
+        String responseTime;
         getMainLinkData();
         links = doc.select("a[href]");
         Tools.INSTANCE.print("\nLinks: (%d)", links.size());
@@ -79,7 +79,7 @@ public class FetchUrlsData {
                 Tools.INSTANCE.insertDataInSubTable(
                         dataBaseHelper,
                         uid,
-                        Tools.INSTANCE.getRandomNumber(10000, 500000),
+                        Tools.INSTANCE.getRandomNumber(100000, 900000),
                         web_link,
                         web_name,
                         responseTime != null ? responseTime : "0ms",
